@@ -13,8 +13,12 @@
     "start": "strapi start",
     "strapi": "strapi"
   },
+  "resolutions": {
+    "graphql": "^15.5.0"
+  },
   "dependencies": {
     "@strapi/plugin-cloud": "4.16.2",
+    "@strapi/plugin-graphql": "^4.25.1",
     "@strapi/plugin-i18n": "4.16.2",
     "@strapi/plugin-users-permissions": "4.16.2",
     "@strapi/provider-upload-cloudinary": "^4.17.1",
