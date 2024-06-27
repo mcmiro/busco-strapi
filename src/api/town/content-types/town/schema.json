@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "towns",
+  "info": {
+    "singularName": "town",
+    "pluralName": "towns",
+    "displayName": "Towns",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

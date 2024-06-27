@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehicle_types",
+  "info": {
+    "singularName": "vehicle-type",
+    "pluralName": "vehicle-types",
+    "displayName": "Vehicle Types",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "capacity": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
