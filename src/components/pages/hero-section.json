@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_pages_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subline": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.benefit"
+    }
+  }
+}

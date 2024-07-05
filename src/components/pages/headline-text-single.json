@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_pages_headline_text_single_s",
+  "info": {
+    "displayName": "Headline Text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}

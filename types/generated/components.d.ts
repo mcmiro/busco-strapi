@@ -1,5 +1,69 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsBenefit extends Schema.Component {
+  collectionName: 'components_elements_benefits';
+  info: {
+    displayName: 'Benefit';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ElementsCta extends Schema.Component {
+  collectionName: 'components_elements_ctas';
+  info: {
+    displayName: 'CTA';
+    icon: 'cursor';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface PagesHeadlineTextImage extends Schema.Component {
+  collectionName: 'components_pages_headline_text_images';
+  info: {
+    displayName: 'Headline Text Image';
+    description: '';
+  };
+  attributes: {
+    headline: Attribute.String & Attribute.Required;
+    content: Attribute.Text;
+    image: Attribute.Media;
+    subline: Attribute.String;
+    cta: Attribute.Component<'elements.cta'>;
+  };
+}
+
+export interface PagesHeadlineTextSingle extends Schema.Component {
+  collectionName: 'components_pages_headline_text_single_s';
+  info: {
+    displayName: 'Headline Text';
+    description: '';
+  };
+  attributes: {
+    headline: Attribute.String & Attribute.Required;
+    content: Attribute.Text;
+  };
+}
+
+export interface PagesHeroSection extends Schema.Component {
+  collectionName: 'components_pages_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+    description: '';
+  };
+  attributes: {
+    subline: Attribute.String;
+    headline: Attribute.String & Attribute.Required;
+    rating: Attribute.Decimal;
+    image: Attribute.Media;
+    benefits: Attribute.Component<'elements.benefit', true>;
+  };
+}
+
 export interface PagesSeo extends Schema.Component {
   collectionName: 'components_pages_seos';
   info: {
@@ -17,6 +81,11 @@ export interface PagesSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.benefit': ElementsBenefit;
+      'elements.cta': ElementsCta;
+      'pages.headline-text-image': PagesHeadlineTextImage;
+      'pages.headline-text-single': PagesHeadlineTextSingle;
+      'pages.hero-section': PagesHeroSection;
       'pages.seo': PagesSeo;
     }
   }

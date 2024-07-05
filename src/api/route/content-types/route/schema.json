@@ -37,6 +37,9 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "additionalCosts": {
+      "type": "decimal"
     }
   }
 }

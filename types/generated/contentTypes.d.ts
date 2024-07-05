@@ -814,6 +814,66 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiImprintImprint extends Schema.SingleType {
+  collectionName: 'imprints';
+  info: {
+    singularName: 'imprint';
+    pluralName: 'imprints';
+    displayName: 'Imprint Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'pages.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::imprint.imprint',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::imprint.imprint',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::imprint.imprint',
+      'oneToMany',
+      'api::imprint.imprint'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiPdpPdp extends Schema.CollectionType {
   collectionName: 'pdps';
   info: {
@@ -840,6 +900,54 @@ export interface ApiPdpPdp extends Schema.CollectionType {
       }>;
     routes: Attribute.Relation<'api::pdp.pdp', 'oneToMany', 'api::route.route'>;
     SEO: Attribute.Component<'pages.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroSection: Attribute.Component<'pages.hero-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sectionOne: Attribute.Component<'pages.headline-text-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    enumerationOne: Attribute.Component<'pages.headline-text-single', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    popularDestinations: Attribute.Component<'pages.headline-text-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sectionTwo: Attribute.Component<'pages.headline-text-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    enumerationTwo: Attribute.Component<'pages.headline-text-single', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    spliterSectionOne: Attribute.Component<'pages.headline-text-image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    priceSection: Attribute.Component<'pages.headline-text-image'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -912,6 +1020,7 @@ export interface ApiRouteRoute extends Schema.CollectionType {
     distanceInKm: Attribute.Decimal & Attribute.Required;
     images: Attribute.Media;
     description: Attribute.Text & Attribute.Required;
+    additionalCosts: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -923,6 +1032,39 @@ export interface ApiRouteRoute extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::route.route',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTermsAndConditionTermsAndCondition
+  extends Schema.SingleType {
+  collectionName: 'terms_and_conditions';
+  info: {
+    singularName: 'terms-and-condition';
+    pluralName: 'terms-and-conditions';
+    displayName: 'Terms & Conditions Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.RichText;
+    seo: Attribute.Component<'pages.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
       'oneToOne',
       'admin::user'
     > &
@@ -1103,9 +1245,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::faq.faq': ApiFaqFaq;
+      'api::imprint.imprint': ApiImprintImprint;
       'api::pdp.pdp': ApiPdpPdp;
       'api::price.price': ApiPricePrice;
       'api::route.route': ApiRouteRoute;
+      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::town.town': ApiTownTown;
       'api::vehicle.vehicle': ApiVehicleVehicle;
