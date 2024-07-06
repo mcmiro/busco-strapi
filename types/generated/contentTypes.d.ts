@@ -923,19 +923,13 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    popularDestinations: Attribute.Component<'pages.headline-text-single'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     sectionTwo: Attribute.Component<'pages.headline-text-single'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    enumerationTwo: Attribute.Component<'pages.headline-text-single', true> &
+    popularDestinations: Attribute.Component<'pages.headline-text-single'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -947,7 +941,49 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    sectionThree: Attribute.Component<'pages.headline-text-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    enumerationTwo: Attribute.Component<'pages.headline-text-single', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     priceSection: Attribute.Component<'pages.headline-text-image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    spliterSectionTwo: Attribute.Component<'pages.headline-text-image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sectionFour: Attribute.Component<'pages.headline-text-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    dailyRoutes: Attribute.Component<'pages.headline-text-image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    spliterThree: Attribute.Component<'pages.headline-text-image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    otherBuses: Attribute.Component<'pages.headline-text-image'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

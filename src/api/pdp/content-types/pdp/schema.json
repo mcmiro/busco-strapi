@@ -70,6 +70,16 @@
       },
       "component": "pages.headline-text-single"
     },
+    "sectionTwo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.headline-text-single"
+    },
     "popularDestinations": {
       "type": "component",
       "repeatable": false,
@@ -80,7 +90,17 @@
       },
       "component": "pages.headline-text-single"
     },
-    "sectionTwo": {
+    "spliterSectionOne": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.headline-text-image"
+    },
+    "sectionThree": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -100,7 +120,7 @@
       },
       "component": "pages.headline-text-single"
     },
-    "spliterSectionOne": {
+    "priceSection": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -110,7 +130,47 @@
       },
       "component": "pages.headline-text-image"
     },
-    "priceSection": {
+    "spliterSectionTwo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.headline-text-image"
+    },
+    "sectionFour": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.headline-text-single"
+    },
+    "dailyRoutes": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.headline-text-image"
+    },
+    "spliterThree": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "pages.headline-text-image"
+    },
+    "otherBuses": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
