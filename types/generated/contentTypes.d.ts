@@ -935,7 +935,7 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    spliterSectionOne: Attribute.Component<'pages.headline-text-image'> &
+    separatorSectionOne: Attribute.Component<'pages.headline-text-image'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -959,7 +959,7 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    spliterSectionTwo: Attribute.Component<'pages.headline-text-image'> &
+    separatorSectionTwo: Attribute.Component<'pages.headline-text-image'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -977,7 +977,7 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    spliterThree: Attribute.Component<'pages.headline-text-image'> &
+    separatorSectionThree: Attribute.Component<'pages.headline-text-image'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

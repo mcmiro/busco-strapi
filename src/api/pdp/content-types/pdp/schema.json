@@ -90,7 +90,7 @@
       },
       "component": "pages.headline-text-single"
     },
-    "spliterSectionOne": {
+    "separatorSectionOne": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -130,7 +130,7 @@
       },
       "component": "pages.headline-text-image"
     },
-    "spliterSectionTwo": {
+    "separatorSectionTwo": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -160,7 +160,7 @@
       },
       "component": "pages.headline-text-image"
     },
-    "spliterThree": {
+    "separatorSectionThree": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
