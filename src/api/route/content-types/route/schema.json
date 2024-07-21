@@ -40,6 +40,15 @@
     },
     "additionalCosts": {
       "type": "decimal"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.hashtag"
     }
   }
 }

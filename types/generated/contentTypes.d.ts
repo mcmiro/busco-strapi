@@ -831,12 +831,6 @@ export interface ApiImprintImprint extends Schema.SingleType {
     };
   };
   attributes: {
-    content: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -845,6 +839,12 @@ export interface ApiImprintImprint extends Schema.SingleType {
         };
       }>;
     seo: Attribute.Component<'pages.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text: Attribute.Blocks &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1057,6 +1057,8 @@ export interface ApiRouteRoute extends Schema.CollectionType {
     images: Attribute.Media;
     description: Attribute.Text & Attribute.Required;
     additionalCosts: Attribute.Decimal;
+    title: Attribute.String & Attribute.Required;
+    tags: Attribute.Component<'elements.hashtag', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1082,14 +1084,15 @@ export interface ApiTermsAndConditionTermsAndCondition
     singularName: 'terms-and-condition';
     pluralName: 'terms-and-conditions';
     displayName: 'Terms & Conditions Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    content: Attribute.RichText;
     seo: Attribute.Component<'pages.seo'>;
+    text: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

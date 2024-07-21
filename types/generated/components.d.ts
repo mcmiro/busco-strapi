@@ -22,6 +22,17 @@ export interface ElementsCta extends Schema.Component {
   };
 }
 
+export interface ElementsHashtag extends Schema.Component {
+  collectionName: 'components_elements_hashtags';
+  info: {
+    displayName: 'hashtag';
+    icon: 'hashtag';
+  };
+  attributes: {
+    tag: Attribute.String;
+  };
+}
+
 export interface PagesHeadlineTextImage extends Schema.Component {
   collectionName: 'components_pages_headline_text_images';
   info: {
@@ -83,6 +94,7 @@ declare module '@strapi/types' {
     export interface Components {
       'elements.benefit': ElementsBenefit;
       'elements.cta': ElementsCta;
+      'elements.hashtag': ElementsHashtag;
       'pages.headline-text-image': PagesHeadlineTextImage;
       'pages.headline-text-single': PagesHeadlineTextSingle;
       'pages.hero-section': PagesHeroSection;

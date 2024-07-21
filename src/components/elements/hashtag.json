@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_hashtags",
+  "info": {
+    "displayName": "hashtag",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    }
+  }
+}
