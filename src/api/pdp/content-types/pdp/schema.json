@@ -179,6 +179,16 @@
         }
       },
       "component": "pages.headline-text-image"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "elements.hashtag"
     }
   }
 }

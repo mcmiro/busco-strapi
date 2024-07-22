@@ -989,6 +989,12 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    tags: Attribute.Component<'elements.hashtag', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1057,8 +1063,6 @@ export interface ApiRouteRoute extends Schema.CollectionType {
     images: Attribute.Media;
     description: Attribute.Text & Attribute.Required;
     additionalCosts: Attribute.Decimal;
-    title: Attribute.String & Attribute.Required;
-    tags: Attribute.Component<'elements.hashtag', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
