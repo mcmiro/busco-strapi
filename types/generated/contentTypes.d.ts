@@ -995,7 +995,7 @@ export interface ApiPdpPdp extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    cardDescription: Attribute.String &
+    cardDescription: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
