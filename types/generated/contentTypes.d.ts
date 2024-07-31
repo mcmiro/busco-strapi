@@ -768,6 +768,38 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactPageContactPage extends Schema.SingleType {
+  collectionName: 'contact_pages';
+  info: {
+    singularName: 'contact-page';
+    pluralName: 'contact-pages';
+    displayName: 'Contact Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'pages.seo'>;
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-page.contact-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-page.contact-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -871,6 +903,38 @@ export interface ApiImprintImprint extends Schema.SingleType {
       'api::imprint.imprint'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiPartnerPagePartnerPage extends Schema.SingleType {
+  collectionName: 'partner_pages';
+  info: {
+    singularName: 'partner-page';
+    pluralName: 'partner-pages';
+    displayName: 'Partner Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'pages.seo'>;
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partner-page.partner-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partner-page.partner-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1293,8 +1357,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::faq.faq': ApiFaqFaq;
       'api::imprint.imprint': ApiImprintImprint;
+      'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
       'api::pdp.pdp': ApiPdpPdp;
       'api::price.price': ApiPricePrice;
       'api::route.route': ApiRouteRoute;
