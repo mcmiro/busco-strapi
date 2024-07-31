@@ -844,7 +844,7 @@ export interface ApiImprintImprint extends Schema.SingleType {
           localized: true;
         };
       }>;
-    text: Attribute.Blocks &
+    content: Attribute.RichText &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1102,7 +1102,7 @@ export interface ApiTermsAndConditionTermsAndCondition
   attributes: {
     title: Attribute.String & Attribute.Required;
     seo: Attribute.Component<'pages.seo'>;
-    text: Attribute.Blocks;
+    content: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

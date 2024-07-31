@@ -35,13 +35,13 @@
       },
       "component": "pages.seo"
     },
-    "text": {
+    "content": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

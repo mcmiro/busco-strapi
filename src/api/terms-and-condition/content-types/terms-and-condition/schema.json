@@ -21,8 +21,8 @@
       "repeatable": false,
       "component": "pages.seo"
     },
-    "text": {
-      "type": "blocks"
+    "content": {
+      "type": "richtext"
     }
   }
 }
