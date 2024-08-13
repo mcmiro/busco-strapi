@@ -1147,6 +1147,39 @@ export interface ApiPricePrice extends Schema.CollectionType {
   };
 }
 
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Schema.SingleType {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    singularName: 'privacy-policy-page';
+    pluralName: 'privacy-policy-pages';
+    displayName: 'Privacy Policy Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SEO: Attribute.Component<'pages.seo'>;
+    title: Attribute.Text & Attribute.Required;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy-page.privacy-policy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy-page.privacy-policy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRouteRoute extends Schema.CollectionType {
   collectionName: 'routes';
   info: {
@@ -1396,6 +1429,7 @@ declare module '@strapi/types' {
       'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
       'api::pdp.pdp': ApiPdpPdp;
       'api::price.price': ApiPricePrice;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::route.route': ApiRouteRoute;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
