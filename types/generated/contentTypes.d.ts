@@ -878,6 +878,43 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'pages.seo'>;
+    intro: Attribute.Component<'pages.headline-text-single'>;
+    sectionTwo: Attribute.Component<'pages.headline-text-single'>;
+    cards: Attribute.Component<'elements.horizontal-card', true>;
+    separatorOne: Attribute.Component<'pages.headline-text-image'>;
+    separatorTwo: Attribute.Component<'pages.headline-text-image'>;
+    heroSection: Attribute.Component<'pages.headline-text-single'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiImprintImprint extends Schema.SingleType {
   collectionName: 'imprints';
   info: {
@@ -1425,6 +1462,7 @@ declare module '@strapi/types' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::faq.faq': ApiFaqFaq;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::imprint.imprint': ApiImprintImprint;
       'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
       'api::pdp.pdp': ApiPdpPdp;

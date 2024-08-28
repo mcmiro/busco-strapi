@@ -33,6 +33,20 @@ export interface ElementsHashtag extends Schema.Component {
   };
 }
 
+export interface ElementsHorizontalCard extends Schema.Component {
+  collectionName: 'components_elements_horizontal_cards';
+  info: {
+    displayName: 'Horizontal Card';
+  };
+  attributes: {
+    tags: Attribute.Component<'elements.hashtag', true>;
+    image: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.Text & Attribute.Required;
+    cta: Attribute.Component<'elements.cta'>;
+  };
+}
+
 export interface PagesHeadlineTextImage extends Schema.Component {
   collectionName: 'components_pages_headline_text_images';
   info: {
@@ -95,6 +109,7 @@ declare module '@strapi/types' {
       'elements.benefit': ElementsBenefit;
       'elements.cta': ElementsCta;
       'elements.hashtag': ElementsHashtag;
+      'elements.horizontal-card': ElementsHorizontalCard;
       'pages.headline-text-image': PagesHeadlineTextImage;
       'pages.headline-text-single': PagesHeadlineTextSingle;
       'pages.hero-section': PagesHeroSection;
