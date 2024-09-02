@@ -84,7 +84,7 @@ export interface PagesHeroSection extends Schema.Component {
     subline: Attribute.String;
     headline: Attribute.String & Attribute.Required;
     rating: Attribute.Decimal;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
     benefits: Attribute.Component<'elements.benefit', true>;
   };
 }
