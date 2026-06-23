@@ -1,5 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ElementsAuthorBox extends Struct.ComponentSchema {
+  collectionName: 'components_elements_author_boxes';
+  info: {
+    description: 'Author metadata block used on category, article, and nested article pages';
+    displayName: 'Author Box';
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images'>;
+    bio: Schema.Attribute.Text;
+    lastReviewedAt: Schema.Attribute.DateTime;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    profileUrl: Schema.Attribute.String;
+    role: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsBenefit extends Struct.ComponentSchema {
   collectionName: 'components_elements_benefits';
   info: {
@@ -106,6 +122,7 @@ export interface PagesSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'elements.author-box': ElementsAuthorBox;
       'elements.benefit': ElementsBenefit;
       'elements.cta': ElementsCta;
       'elements.hashtag': ElementsHashtag;
