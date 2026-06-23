@@ -1,111 +1,111 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ElementsBenefit extends Schema.Component {
+export interface ElementsBenefit extends Struct.ComponentSchema {
   collectionName: 'components_elements_benefits';
   info: {
     displayName: 'Benefit';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ElementsCta extends Schema.Component {
+export interface ElementsCta extends Struct.ComponentSchema {
   collectionName: 'components_elements_ctas';
   info: {
     displayName: 'CTA';
     icon: 'cursor';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ElementsHashtag extends Schema.Component {
+export interface ElementsHashtag extends Struct.ComponentSchema {
   collectionName: 'components_elements_hashtags';
   info: {
     displayName: 'hashtag';
     icon: 'hashtag';
   };
   attributes: {
-    tag: Attribute.String;
+    tag: Schema.Attribute.String;
   };
 }
 
-export interface ElementsHorizontalCard extends Schema.Component {
+export interface ElementsHorizontalCard extends Struct.ComponentSchema {
   collectionName: 'components_elements_horizontal_cards';
   info: {
     displayName: 'Horizontal Card';
   };
   attributes: {
-    tags: Attribute.Component<'elements.hashtag', true>;
-    image: Attribute.Media & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    content: Attribute.Text & Attribute.Required;
-    cta: Attribute.Component<'elements.cta'>;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    cta: Schema.Attribute.Component<'elements.cta', false>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    tags: Schema.Attribute.Component<'elements.hashtag', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface PagesHeadlineTextImage extends Schema.Component {
+export interface PagesHeadlineTextImage extends Struct.ComponentSchema {
   collectionName: 'components_pages_headline_text_images';
   info: {
-    displayName: 'Headline Text Image';
     description: '';
+    displayName: 'Headline Text Image';
   };
   attributes: {
-    headline: Attribute.String & Attribute.Required;
-    content: Attribute.Text;
-    image: Attribute.Media;
-    subline: Attribute.String;
-    cta: Attribute.Component<'elements.cta'>;
+    content: Schema.Attribute.Text;
+    cta: Schema.Attribute.Component<'elements.cta', false>;
+    headline: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    subline: Schema.Attribute.String;
   };
 }
 
-export interface PagesHeadlineTextSingle extends Schema.Component {
+export interface PagesHeadlineTextSingle extends Struct.ComponentSchema {
   collectionName: 'components_pages_headline_text_single_s';
   info: {
-    displayName: 'Headline Text';
     description: '';
+    displayName: 'Headline Text';
   };
   attributes: {
-    headline: Attribute.String & Attribute.Required;
-    content: Attribute.Text;
+    content: Schema.Attribute.Text;
+    headline: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface PagesHeroSection extends Schema.Component {
+export interface PagesHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_pages_hero_sections';
   info: {
-    displayName: 'Hero Section';
     description: '';
+    displayName: 'Hero Section';
   };
   attributes: {
-    subline: Attribute.String;
-    headline: Attribute.String & Attribute.Required;
-    rating: Attribute.Decimal;
-    image: Attribute.Media & Attribute.Required;
-    benefits: Attribute.Component<'elements.benefit', true>;
+    benefits: Schema.Attribute.Component<'elements.benefit', true>;
+    headline: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    rating: Schema.Attribute.Decimal;
+    subline: Schema.Attribute.String;
   };
 }
 
-export interface PagesSeo extends Schema.Component {
+export interface PagesSeo extends Struct.ComponentSchema {
   collectionName: 'components_pages_seos';
   info: {
     displayName: 'SEO';
     icon: 'bulletList';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    ogImage: Attribute.Media;
-    jsonLd: Attribute.Text;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    jsonLd: Schema.Attribute.Text;
+    ogImage: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'elements.benefit': ElementsBenefit;
       'elements.cta': ElementsCta;
       'elements.hashtag': ElementsHashtag;
