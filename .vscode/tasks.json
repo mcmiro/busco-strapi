@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "kill-strapi-dev",
+			"type": "shell",
+			"command": "pkill -f \"strapi develop|strapi start|node.*strapi\"",
+			"isBackground": false
+		},
+		{
+			"label": "check-strapi-port",
+			"type": "shell",
+			"command": "lsof -i tcp:1337 -n -P || echo \"port 1337 free\"",
+			"isBackground": false
+		}
+	]
+}
