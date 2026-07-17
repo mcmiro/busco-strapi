@@ -33,8 +33,8 @@
     "styled-components": "^6.0.0"
   },
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=6.0.0"
+    "node": "22.x",
+    "npm": "10.x"
   },
   "strapi": {
     "uuid": "93278f43-f529-41b1-9a80-4b8a247f6bc9"
