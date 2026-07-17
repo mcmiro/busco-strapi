@@ -52,6 +52,20 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 - [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
 - [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
 
+## Article Silo (Category / Article / Nested)
+
+This project includes a SEO-first article silo implementation with these public paths:
+
+- `/{category}`
+- `/{category}/{article-slug}`
+- `/{category}/{article-slug}/{nested-article}`
+
+Public endpoints are available under `/api/article-silo/*` for path resolution and frontend navigation lists.
+
+Full integration details for Next.js (routing, metadata mapping, payload shape, and editor workflow):
+
+- [docs/article-silo-next-integration.md](docs/article-silo-next-integration.md)
+
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
